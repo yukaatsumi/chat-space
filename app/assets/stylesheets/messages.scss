@@ -1,0 +1,18 @@
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  width: calc(100vw - 300px);
+  float: right;
+}
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  background-color: #2F3E51;
+  float: right;
+}
