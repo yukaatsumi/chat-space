@@ -1,3 +1,79 @@
 .wrapper
   .main
+    .main__header
+      .main__header__group
+        .main__header__group__title
+          sampleグループ
+        .main__header__group__member
+          member : User1 User2 User3
+        .main__header__group__button
+          Edit
+
+    .main__chat
+      .main__chat__message
+        .main__chat__message__upper
+          .main__chat__message__upper__user-name
+            Yuka
+          .main__chat__message__upper__date
+            2018.03.13
+        .main__chat__message__bottom
+          .main__chat__message__bottom__content
+            疲れた。よく分からん。
+      .main__chat__message
+        .main__chat__message__upper
+          .main__chat__message__upper__user-name
+            Yuka
+          .main__chat__message__upper__date
+            2018.03.13
+        .main__chat__message__bottom
+          .main__chat__message__bottom__content
+            疲れた。よく分からん。
+      .main__chat__message
+        .main__chat__message__upper
+          .main__chat__message__upper__user-name
+            Yuka
+          .main__chat__message__upper__date
+            2018.03.13
+        .main__chat__message__bottom
+          .main__chat__message__bottom__content
+            疲れた。よく分からん。
+
+    .main__footer
+      .main__footer__form
+        .main__footer__form__textarea
+          .main__footer__form__textarea__message
+            Type a message
+            .main__footer__form__textarea__form-mask
+              %lavel.main__footer__form__textarea__form-mask__icon
+                %i.fa.fa-picture-o
+        .main__footer__form__button
+          Send
   .sidebar
+    .sidebar__user
+      .sidebar__user__name
+        User name
+      %nav.sidebar__user__nav
+        = link_to '#' do
+          %i.fa.fa-pencil-square-o
+        = link_to '#' do
+          %i.fa.fa-cog
+
+    .sidebar__bottom
+      .sidebar__bottom__group
+        .sidebar__bottom__group__title
+          sampleグループ1
+        .sidebar__bottom__group__lastpost
+          眠い
+      .sidebar__bottom__group
+        .sidebar__bottom__group__title
+          sampleグループ2
+        .sidebar__bottom__group__lastpost
+          眠い
+      .sidebar__bottom__group
+        .sidebar__bottom__group__title
+          sampleグループ3
+        .sidebar__bottom__group__lastpost
+          眠い
+
+
+
