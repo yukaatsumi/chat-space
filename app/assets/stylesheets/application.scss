@@ -1,0 +1,14 @@
+@import "./reset";
+@import "./messages";
+@import "font-awesome";
+.notification {
+  text-align: center;
+  color: #fff;
+  background-color: $skyblue;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
