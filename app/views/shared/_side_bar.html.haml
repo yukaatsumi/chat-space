@@ -1,0 +1,26 @@
+.sidebar
+  .sidebar__user
+    %h3.sidebar__user__name
+      = current_user.name
+    %nav.sidebar__user__nav
+      = link_to new_group_path do
+        = fa_icon 'pencil-square-o', class: 'icon'
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: 'icon'
+
+  .sidebar__bottom
+    .sidebar__bottom__group
+      .sidebar__bottom__group__title
+        sampleグループ1
+      .sidebar__bottom__group__lastpost
+        眠い
+    .sidebar__bottom__group
+      .sidebar__bottom__group__title
+        sampleグループ2
+      .sidebar__bottom__group__lastpost
+        眠い
+    .sidebar__bottom__group
+      .sidebar__bottom__group__title
+        sampleグループ3
+      .sidebar__bottom__group__lastpost
+        眠い
