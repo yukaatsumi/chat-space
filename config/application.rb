@@ -15,6 +15,6 @@ module ChatSpace
       g.test_framework false
       g.template_engine false
     end
-
+    config.i18n.default_locale = :ja
   end
 end
