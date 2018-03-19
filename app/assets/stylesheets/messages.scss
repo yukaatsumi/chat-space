@@ -4,15 +4,12 @@ body,
   height: 100%;
 }
 
-
-$skyblue: #38AEF0;
-
 // ここから[右側]メインのメッセージエリア
 .main {
   height: 100%;
   width: calc(100vw - 300px);
   float: right;
-  background-color: #AAA;
+  background-color: #aaa;
   position: relative;
   &__header {
     height: 100px;
@@ -31,7 +28,7 @@ $skyblue: #38AEF0;
       }
       &__button {
         color: $skyblue;
-        background-color: #fff;
+        background-color: $white;
         padding: 0 20px;
         height: 40px;
         line-height: 40px;
@@ -53,7 +50,7 @@ $skyblue: #38AEF0;
           float: left;
           font-size: 16px;
           font-weight: bold;
-          color: #434A54;
+          color: $black;
           padding-right: 10px;
         }
         &__date {
@@ -65,7 +62,7 @@ $skyblue: #38AEF0;
       &__bottom {
         &__content {
           font-size: 14px;
-          color: #434A54;
+          color: $black;
           clear: both;
         }
       }
@@ -84,7 +81,7 @@ $skyblue: #38AEF0;
         margin: 20px 0;
         line-height: 50px;
         text-align: center;
-        color: #fff;
+        color: $white;
         background-color: $skyblue;
         float: right;
       }
@@ -93,10 +90,10 @@ $skyblue: #38AEF0;
         width: calc(100% - 125px);
         margin: 20px 0;
         padding-left: 10px;
-        background-color: #fff;
+        background-color: $white;
         float: left;
         &__message {
-          color: #434A54;
+          color: $black;
           font-size: 16px;
           line-height: 50px;
           padding-left: 10px;
@@ -116,18 +113,18 @@ $skyblue: #38AEF0;
 .sidebar {
   height: 100%;
   width: 300px;
-  background-color: #2F3E51;
+  background-color: $side_blue_light;
   float: right;
   &__user {
     width:  calc(300px - 40px);
     height: calc(100px - 50px);
     padding: 35px 20px 15px 20px;
-    background-color: #253141;
+    background-color: $side_blue_dark;
     border-bottom: 1px solid #eee;
     position: relative;
     display: inline-block;
     &__name {
-      color: #fff;
+      color: $white;
       font-weight: bold;
       font-size: 16px;
       float: left;
@@ -144,11 +141,11 @@ $skyblue: #38AEF0;
       &__title {
         font-size: 15px;
         padding-bottom: 5px;
-        color: #fff;
+        color: $white;
       }
       &__lastpost {
           font-size: 11px;
-          color: #fff;
+          color: $white;
           padding-bottom: 20px;
       }
     }
@@ -156,6 +153,3 @@ $skyblue: #38AEF0;
 }
 
 // ここまで[左側]ユーザーのエリア
-
-
-
