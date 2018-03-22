@@ -1,10 +1,3 @@
-html,
-body,
-.wrapper {
-  height: 100%;
-}
-
-// ここから[右側]メインのメッセージエリア
 .main {
   height: 100%;
   width: calc(100vw - 300px);
@@ -15,6 +8,7 @@ body,
     height: 100px;
     padding: 0 40px;
     border-bottom: 1px solid #eee;
+    background-color: $white;
     &__group {
       &__title {
         color: #333;
@@ -39,117 +33,49 @@ body,
       }
     }
   }
-  &__chat {
+  &__messages{
     padding-top: 46px;
     padding-left: 40px;
     padding-right: 40px;
-    &__message {
-      padding-bottom: 40px;
-      &__upper {
-        &__user-name {
-          float: left;
-          font-size: 16px;
-          font-weight: bold;
-          color: $black;
-          padding-right: 10px;
-        }
-        &__date {
-          float: left;
-          font-size: 12px;
-          color: #999;
-        }
-      }
-      &__bottom {
-        &__content {
-          font-size: 14px;
-          color: $black;
-          clear: both;
-        }
-      }
-    }
   }
   &__footer {
-    height: 90px;
-    width: calc(100vw - 300px);
-    position: absolute;
-    bottom: 0;
-    &__form {
-      padding: 0 40px;
-      &__button {
-        height: 50px;
-        width: 100px;
-        margin: 20px 0;
-        line-height: 50px;
-        text-align: center;
-        color: $white;
-        background-color: $skyblue;
-        float: right;
-      }
-      &__textarea {
-        height: 50px;
-        width: calc(100% - 125px);
-        margin: 20px 0;
-        padding-left: 10px;
-        background-color: $white;
-        float: left;
-        &__message {
-          color: $black;
-          font-size: 16px;
+      height: 90px;
+      width: calc(100vw - 300px);
+      position: fixed;
+      bottom: 0;
+      background-color: #efefef;
+      &__form {
+        height: 90px;
+        padding: 20px 40px;
+        &__textarea {
+          position: relative;
+          width: calc(100% - 125px);
+          &__chatbox {
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            padding-left: 10px;
+            background-color: #fff;
+            float: left;
+          }
+          &__icon {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+          }
+          #message_image {
+            display: none;
+          }
+        }
+        &__button {
+          height: 50px;
+          width: 100px;
           line-height: 50px;
-          padding-left: 10px;
-        }
-        &__form-mask {
+          text-align: center;
+          color: #fff;
+          background-color: $skyblue;
           float: right;
-          margin-right: 10px;
         }
       }
     }
   }
-}
-// ここまで[右側]メインのメッセージエリア
-
-// ここから[左側]ユーザーのエリア
-
-.sidebar {
-  height: 100%;
-  width: 300px;
-  background-color: $side_blue_light;
-  float: left;
-  &__user {
-    width:  calc(300px - 40px);
-    height: calc(100px - 50px);
-    padding: 35px 20px 15px 20px;
-    background-color: $side_blue_dark;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    display: inline-block;
-    &__name {
-      color: $white;
-      font-weight: bold;
-      font-size: 16px;
-      float: left;
-    }
-    &__nav {
-      float: right;
-    }
-  }
-  &__groups {
-    &__group {
-      padding-top: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      &__name {
-        font-size: 15px;
-        color: $white;
-        padding-bottom: 5px;
-      }
-      &__message {
-        font-size: 11px;
-        color: $white;
-        padding-bottom: 40px;
-      }
-    }
-  }
-}
-
-// ここまで[左側]ユーザーのエリア
