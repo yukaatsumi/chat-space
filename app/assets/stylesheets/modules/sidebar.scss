@@ -1,0 +1,45 @@
+// ここから[左側]ユーザーのエリア
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  background-color: $side_blue_light;
+  float: left;
+  &__user {
+    width:  calc(300px - 40px);
+    height: calc(100px - 50px);
+    padding: 35px 20px 15px 20px;
+    background-color: $side_blue_dark;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    display: inline-block;
+    &__name {
+      color: $white;
+      font-weight: bold;
+      font-size: 16px;
+      float: left;
+    }
+    &__nav {
+      float: right;
+    }
+  }
+  &__groups {
+    &__group {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      &__name {
+        font-size: 15px;
+        color: $white;
+        padding-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+        color: $white;
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+
+// ここまで[左側]ユーザーのエリア
