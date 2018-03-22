@@ -3,48 +3,27 @@
     .main__header
       .main__header__group
         .main__header__group__title
-          sampleグループ
+          = @group.name
         .main__header__group__member
-          member : User1 User2 User3
+          MEMBER:
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
         .main__header__group__button
           Edit
 
-    .main__chat
-      .main__chat__message
-        .main__chat__message__upper
-          .main__chat__message__upper__user-name
-            Yuka
-          .main__chat__message__upper__date
-            2018.03.13
-        .main__chat__message__bottom
-          .main__chat__message__bottom__content
-            疲れた。よく分からん。
-      .main__chat__message
-        .main__chat__message__upper
-          .main__chat__message__upper__user-name
-            Yuka
-          .main__chat__message__upper__date
-            2018.03.13
-        .main__chat__message__bottom
-          .main__chat__message__bottom__content
-            疲れた。よく分からん。
-      .main__chat__message
-        .main__chat__message__upper
-          .main__chat__message__upper__user-name
-            Yuka
-          .main__chat__message__upper__date
-            2018.03.13
-        .main__chat__message__bottom
-          .main__chat__message__bottom__content
-            疲れた。よく分からん。
+
+    .main__messages
+      = render partial: 'message', collection: @messages
+
+
     .main__footer
       .main__footer__form
-        .main__footer__form__textarea
-          .main__footer__form__textarea__message
-            Type a message
-            .main__footer__form__textarea__form-mask
-              %lavel.main__footer__form__textarea__form-mask__icon
-                %i.fa.fa-picture-o
-        .main__footer__form__button
-          Send
-  = render partial: "./shared/side_bar"
+        = form_for [@group, @message] do |f|
+          .main__footer__form__textarea
+            = f.text_field :content, class: 'main__footer__form__textarea__chatbox', placeholder: 'type a message'
+            = f.label :image, class: '' do
+              = fa_icon 'picture-o', class: 'main__footer__form__textarea__icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'main__footer__form__button'
+
+  = render partial: './shared/side_bar'
