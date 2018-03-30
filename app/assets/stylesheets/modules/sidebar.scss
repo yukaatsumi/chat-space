@@ -5,6 +5,7 @@
   width: 300px;
   background-color: $side_blue_light;
   float: left;
+  position: fixed;
   &__user {
     width:  calc(300px - 40px);
     height: calc(100px - 50px);
@@ -24,6 +25,8 @@
     }
   }
   &__groups {
+      height: calc(100vh - 100px);
+      overflow-y: scroll;
     &__group {
       padding-top: 20px;
       padding-left: 20px;
