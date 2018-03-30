@@ -18,6 +18,7 @@ $(function(){
                   <div class="messages__message__bottom">
                     <p class="messages__message__bottom__content">
                       ${message.text}
+                      <br>
                       ${image}
                     </p>
                   </div>
@@ -39,7 +40,10 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main__messages').append(html)
-      $(".main__messages").scrollTop($(".main__messages")[0].scrollHeight);
+      $('#message_content').val('')
+      $('#message_image').val('')
+      $('.main__footer__form__button').prop("disabled", false)
+      $(".main__messages").animate({scrollTop:$(".main__messages")[0].scrollHeight},"swing");
     })
     .fail(function(){
       alert('error');

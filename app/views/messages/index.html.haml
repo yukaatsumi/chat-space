@@ -21,7 +21,7 @@
         = form_for [@group, @message] do |f|
           .main__footer__form__textarea
             = f.text_field :content, class: 'main__footer__form__textarea__chatbox', placeholder: 'type a message'
-            = f.label :image, class: '' do
+            = f.label :image, class: 'main__footer__form__textarea__image' do
               = fa_icon 'picture-o', class: 'main__footer__form__textarea__icon'
               = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'main__footer__form__button'
