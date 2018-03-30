@@ -4,7 +4,11 @@
   float: right;
   background-color: #aaa;
   position: relative;
+  clear: both;
+
   &__header {
+    width: calc(100vw - 300px);
+    box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
     border-bottom: 1px solid #eee;
@@ -34,9 +38,11 @@
     }
   }
   &__messages{
-    padding-top: 46px;
-    padding-left: 40px;
-    padding-right: 40px;
+    height: calc(100vh - 100px - 90px);
+    padding: 46px 40px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    clear: both;
   }
   &__footer {
       height: 90px;
