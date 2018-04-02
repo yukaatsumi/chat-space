@@ -15,10 +15,10 @@ var search_list = $("#user-search-result");
               </div>`
       search_list.append(html);
   }
-  function appendNoUser(user){
+  function appendNoUser(){
     var html =
               `<div class="chat-group-user clearfix">
-                <p class="chat-group-user__name">${user}</p>
+                <p class="chat-group-user__name">一致するユーザーはいません</p>
               </div>`
       search_list.append(html);
   }
@@ -52,7 +52,7 @@ function buildMemberHTML(id, name){
             appendUser(user);
           });
         } else {
-          appendNoUser("一致するユーザーはいません");
+          appendNoUser();
         }
       })
   // ユーザーの検索に失敗した場合
