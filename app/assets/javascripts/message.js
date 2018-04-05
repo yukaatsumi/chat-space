@@ -49,6 +49,7 @@ $(document).on('turbolinks:load', function() {
 
   // メッセージ送信の非同期通信
   setInterval(auto_update, 5000);
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
