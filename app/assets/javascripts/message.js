@@ -1,15 +1,36 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
+  // メッセージの自動更新
+    function auto_update(){
+      var message_id = $('.messages__message:last').attr('data-message-id')
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: {id: message_id},
+          dataType: 'json'
+        })
+        .done(function(data){
+          var insertHTML = '';
+          data.forEach(function(message) {
+            insertHTML += buildHTML(message);
+            $(".main__messages:last").append(insertHTML);
+            $(".main__messages").animate({scrollTop:$(".main__messages")[0].scrollHeight},"swing");
+          });
+        })
+        .fail(function(data){
+          alert('更新できませんでした');
+        });
+      }
+    }
+  // メッセージ表示のHTMLを生成
   function buildHTML(message){
       if(message.image.url == null){
-        var image = "";
+        message.image.url = ""
       }
-      else {
-        var image = `<img src=${message.image.url}>`;
-      }
-    var html = `<div class="messages__message">
+    var html = `<div class="messages__message" data-message-id="${message.id}">
                   <div class="messages__message__upper">
                     <div class="messages__message__upper__user-name">
-                      <p=${message.id}>${message.name}</p>
+                      ${message.name}
                     </div>
                     <div class="messages__message__upper__date">
                       ${message.date}
@@ -19,12 +40,15 @@ $(function(){
                     <p class="messages__message__bottom__content">
                       ${message.text}
                       <br>
-                      ${image}
+                      <img src="${message.image.url}">
                     </p>
                   </div>
                 </div>`
     return html;
   }
+
+  // メッセージ送信の非同期通信
+  setInterval(auto_update, 5000);
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
