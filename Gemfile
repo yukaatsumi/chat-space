@@ -40,7 +40,6 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'ovirt-engine-sdk', '4.2.3'
 
 group :production do
   gem 'unicorn'
